@@ -7,26 +7,26 @@
     <!-- TITLE -->
     <p>
         <label for='playlist-title'>Title</label><br>
-        <input id='playlist-title' type='text' name='title' value='{{ playlist.title }}' />
+        <input class="form-control" id='playlist-title' type='text' name='title' value='{{ playlist.title }}' />
     </p>
 
     <!-- DESCRIPTION -->
     <p>
         <label for='description'>Description</label><br>
-        <input id='description' type='text' name='description' value='{{ playlist.description }}' />
+        <input class="form-control" id='description' type='text' name='description' value='{{ playlist.description }}' />
     </p>
 
     <!-- VIDEO LINKS -->
     <p>
         <label for='playlist-videos'>Videos</label><br>
         <p>Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
-        <textarea id='playlist-videos' name='videos' rows='10'>{{ "\n".join(playlist.videos) }}</textarea>
+        <textarea class="form-control" id='playlist-videos' name='videos' rows='10'>{{ "\n".join(playlist.videos) }}</textarea>
     </p>
 
     <!-- RATINGS -->
     <p>
         <label for='playlist-rating'>Rating</label><br>
-        <select name="playlist-rating" id="playlist-rating">
+        <select class="form-control" name="playlist-rating" id="playlist-rating">
             <option value="0">0 Stars</option>
             <option value="1">1 Stars</option>
             <option value="2">2 Stars</option>
