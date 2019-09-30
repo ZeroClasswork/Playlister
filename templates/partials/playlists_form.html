@@ -22,4 +22,18 @@
         <p>Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
         <textarea id='playlist-videos' name='videos' rows='10'>{{ "\n".join(playlist.videos) }}</textarea>
     </p>
+
+    <!-- RATINGS -->
+    <p>
+        <label for='playlist-rating'>Rating</label><br>
+        <select name="playlist-rating" id="playlist-rating">
+            <option value="0">0 Stars</option>
+            <option value="1">1 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
+    </p>
+
 </fieldset>

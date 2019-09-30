@@ -35,8 +35,8 @@ def playlists_submit():
         'rating': request.form.get('rating')
     }
     playlist_id = playlists.insert_one(playlist).inserted_id
-    return redirect(url_for("playlists_index"))@app.route("/playlists", methods=["POST"])
-
+    return redirect(url_for("playlists_index"))
+    
 @app.route("/playlists/<playlist_id>")
 def playlists_show(playlist_id):
     """Show a single playlist."""
