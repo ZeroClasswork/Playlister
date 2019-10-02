@@ -47,7 +47,7 @@ def playlists_show(playlist_id):
     """Show a single playlist."""
     playlist = playlists.find_one({'_id': ObjectId(playlist_id)})
     playlist_comments = comments.find({"playlist_id": ObjectId(playlist_id)})
-    return render_template('playlists_show.html', playlist=playlist, playlist_comments=playlist_comments)
+    return render_template('playlists_show.html', playlist=playlist, comments=playlist_comments)
 
 @app.route('/playlists/<playlist_id>', methods=['POST'])
 def playlists_update(playlist_id):
@@ -84,7 +84,7 @@ def comments_new():
     }
     print(comment)
     comment_id = comments.insert_one(comment).inserted_id
-    return redirect(url_for('playlists_show', playlist_id=request.form.get('playlist_id'), comments=comments))
+    return redirect(url_for('playlists_show', playlist_id=request.form.get('playlist_id')))
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
