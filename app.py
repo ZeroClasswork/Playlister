@@ -84,7 +84,7 @@ def comments_new():
     }
     print(comment)
     comment_id = comments.insert_one(comment).inserted_id
-    return redirect(url_for('playlists_show', playlist_id=request.form.get('playlist_id')))
+    return redirect(url_for('playlists_show', playlist_id=request.form.get('playlist_id'), comments=comments))
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
