@@ -38,7 +38,7 @@ def playlists_submit():
         'title': request.form.get('title'),
         'description': request.form.get('description'),
         'videos': request.form.get('videos').split(),
-        'rating': request.form.get('rating')
+        'rating': request.form.get('rating'),
         'created_at': datetime.now()
     }
     print(playlist)
